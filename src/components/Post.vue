@@ -1,14 +1,16 @@
 <template>
   <v-layout py-4 h-100>
     <v-flex row>
-      <div class="caption">{{formatedDate}}</div>
-      <h2 class="color-333 headline font-weight-light">{{title}}</h2>
-      <p class="mb-1 color-666 font-weight-light subheading">{{body}}</p>
+      <div class="caption">{{formatedDate}}
+      <h3 class="color-333 headline font-weight-light">{{title}}</h3>
+      <p v-line-clamp="4" class="mb-1 color-666 font-weight-light subheading">{{body}}</p>
+      </div>
     </v-flex>
   </v-layout>
 </template>
 
 <script>
+
 export default {
 	name: 'Post',
 	props: {
@@ -23,6 +25,7 @@ export default {
   }
 }
 </script>
+
 <style>
   .color-666 {
     color: #666;
@@ -30,8 +33,8 @@ export default {
   .color-333 {
     color: #333;
   }
+
   .h-100 {
     height: 100%;
   }
 </style>
-

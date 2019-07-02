@@ -9,6 +9,8 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
+import VueMq from 'vue-mq'
+import lineClamp from 'vue-line-clamp'
 
 Vue.config.productionTip = false
 
@@ -19,6 +21,19 @@ Vue.use(Vuetify, {
 		secondary: '#b0bec5',
 		accent: '#8c9eff',
 		error: '#b71c1c'
+	}
+})
+
+Vue.use(lineClamp, {
+  // plugin options
+})
+
+Vue.use(VueMq, {
+	breakpoints: {
+		mobile: 450,
+		tablet: 900,
+		laptop: 1250,
+		desktop: Infinity,
 	}
 })
 

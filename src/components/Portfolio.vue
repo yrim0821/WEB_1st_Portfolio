@@ -4,14 +4,15 @@
     </v-img>
     <v-card-title primary-title>
       <div>
-        <div class="headline">{{title}}</div>
-        <span class="grey--text">{{body}}</span>
+        <div v-line-clamp:20="1" class="headline">{{title}}</div>
+        <span v-line-clamp:20="3" class="grey--text">{{body}}</span>
       </div>
     </v-card-title>
   </v-card>
 </template>
 
 <script>
+
 export default {
 	name: 'Portfolio',
 	props: {
@@ -27,4 +28,3 @@ export default {
 	}
 }
 </script>
-
