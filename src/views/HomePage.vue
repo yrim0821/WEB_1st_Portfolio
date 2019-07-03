@@ -1,19 +1,22 @@
 <template>
 <div>
   <ImgBanner imgSrc="https://source.unsplash.com/random">
-    <div style="line-height:1.2em;" slot="text">배너없다<br></div>
+    <div style="line-height:1.2em; font-family:'Jeju Hallasan'; font-size:60pt ;
+    text-shadow: 5px 5px 3px rgb(255,255,255)" slot="text">MY SITE<br></div>
   </ImgBanner>
   <v-container>
     <!-- About Me -->
     <v-layout my-5>
       <v-flex class="aboutMe" :class="$mq" xs8>
-        <h2 class="headline mb-3">About Me</h2>
+        <h2 class="headline mb-3"><span style="font-family:'Jeju Hallasan' ; font-size:20pt">About Me</span></h2>
+        <span style="font-family:'KHNPHU'">
         <p class="mr-4">안녕하세요, 뭐하시나요!<br></p>
+      </span>
       </v-flex>
 
 
       <v-flex class="profileImg" :class="$mq" xs4>
-        <v-img :src="getImgUrl('profile.png')" aspect-ratio="1.5" />
+        <v-img :src="getImgUrl('me.jpg')" aspect-ratio="1.5" />
       </v-flex>
     </v-layout>
 
@@ -72,6 +75,8 @@ export default {
 </script>
 
 <style>
+@import url(//fonts.googleapis.com/earlyaccess/jejuhallasan.css); .jejuhallasan * { font-family: 'Jeju Hallasan', cursive; }
+@font-face { font-family: 'KHNPHU'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KHNPHU.woff') format('woff'); font-weight: normal; font-style: normal; }
 .profileImg.mobile {
   display: none;
 }

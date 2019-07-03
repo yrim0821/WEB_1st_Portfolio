@@ -2,12 +2,12 @@
 <v-app style="position:absolute">
 
   <div class="toolbar">
-    <v-toolbar>
+    <v-toolbar style="background-color: rgba(189,189,189,0.5)">
       <v-toolbar-side-icon @click.stop="sideNav = !sideNav" class="hidden-sm-and-up">
         <v-icon>menu</v-icon>
       </v-toolbar-side-icon>
       <v-toolbar-title>
-        <router-link to="/" tag="span" style="cursor: pointer">SSAFY</router-link>
+        <router-link to="/" tag="span" style="cursor: pointer"><span style="color:blue">SSAFY</span></router-link>
 
       </v-toolbar-title>
       <v-spacer></v-spacer>
