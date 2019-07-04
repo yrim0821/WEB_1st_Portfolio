@@ -6,11 +6,12 @@
   </ImgBanner>
   <v-container>
     <!-- About Me -->
-    <v-layout my-5>
+    <v-layout my-5 id="ttest">
       <v-flex class="aboutMe" :class="$mq" xs8>
         <h2 class="headline mb-3"><span style="font-family:'Jeju Hallasan' ; font-size:20pt">About Me</span></h2>
         <span style="font-family:'KHNPHU'">
-        <p class="mr-4">안녕하세요, 뭐하시나요!<br></p>
+        <!-- <p class="mr-4" v-for ="item in data" v-if="item.where == item.info">{{ item.greeting }}<br></p> -->
+        <p class="mr-4" v-for ="item in data" v-if="item.where == item.info">안녕하세요 교육이수중입니다<br></p>
       </span>
       </v-flex>
 
@@ -44,7 +45,8 @@
     <!-- Github -->
     <v-layout my-5>
       <v-flex xs12>
-        <h2 class="headline my-5 text-xs-center"><span style="font-family:'Jeju Hallasan' ; font-size:25pt">Project</span></h2>
+        <h2 class="headline my-5 text-xs-center"><span style="font-family:'Jeju Hallasan' ; font-size:25pt">Project</span>
+        </h2>
         <RepositoryList></RepositoryList>
       </v-flex>
     </v-layout>
@@ -57,6 +59,8 @@ import ImgBanner from '../components/ImgBanner'
 import PortfolioList from '../components/PortfolioList'
 import PostList from '../components/PostList'
 import RepositoryList from '../components/RepositoryList'
+
+var country = navigator.language.substr(0,2)
 
 export default {
   name: 'HomePage',
@@ -71,7 +75,26 @@ export default {
       return require('../assets/' + img)
     }
   },
+
+  data()
+  {
+    return{
+      data: [{
+        where: 'ko',
+        greeting:'안녕하세요, 저는 교육이수중입니다',
+        info : country
+      },
+      {
+        where: 'en',
+        greeting:'Hi, America!',
+        info : country}],
+
+      info : country
+    }
+  }
 }
+
+
 </script>
 
 <style>
