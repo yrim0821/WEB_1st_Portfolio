@@ -10,7 +10,7 @@
       <v-flex class="aboutMe" :class="$mq" xs8>
         <h2 class="headline mb-3"><span style="font-family:'Jeju Hallasan' ; font-size:20pt">About Me</span></h2>
         <span style="font-family:'KHNPHU'">
-        <!-- <p class="mr-4" v-for ="item in data" v-if="item.where == item.info">{{ item.greeting }}<br></p> -->
+        <p class="mr-4" v-for ="item in data" v-if="item.where == item.info">{{ item.greeting }}<br></p>
         <p class="mr-4" v-for ="item in data" v-if="item.where == item.info">안녕하세요 교육이수중입니다<br></p>
       </span>
       </v-flex>
@@ -61,6 +61,7 @@ import PostList from '../components/PostList'
 import RepositoryList from '../components/RepositoryList'
 
 var country = navigator.language.substr(0,2)
+console.log(country)
 
 export default {
   name: 'HomePage',
