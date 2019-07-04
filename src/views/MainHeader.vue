@@ -2,7 +2,7 @@
 <v-app style="position:absolute">
 
   <div class="toolbar">
-    <v-toolbar style="background-color: rgba(189,189,189,0.5)">
+    <v-toolbar style="background-color: rgba(189,189,189,0.9)">
       <v-toolbar-side-icon @click.stop="sideNav = !sideNav" class="hidden-sm-and-up">
         <v-icon>menu</v-icon>
       </v-toolbar-side-icon>

@@ -24,7 +24,7 @@
     <v-layout my-5>
       <v-flex xs12>
         <router-link to="/portfolio">
-          <h2 class="headline my-5 text-xs-center">Portfolio</h2>
+          <h2 class="headline my-5 text-xs-center"><span style="font-family:'Jeju Hallasan' ; font-size:25pt">Portfolio</span></h2>
         </router-link>
         <PortfolioList></PortfolioList>
       </v-flex>
@@ -34,7 +34,7 @@
     <v-layout my-5>
       <v-flex xs12>
         <router-link to="/post">
-          <h2 class="headline my-5 text-xs-center">Post</h2>
+          <h2 class="headline my-5 text-xs-center"><span style="font-family:'Jeju Hallasan' ; font-size:25pt">Post</span></h2>
         </router-link>
         <PostList :column="$mq==='mobile' ? 1:2"></PostList>
       </v-flex>
@@ -44,7 +44,7 @@
     <!-- Github -->
     <v-layout my-5>
       <v-flex xs12>
-        <h2 class="headline my-5 text-xs-center">Project</h2>
+        <h2 class="headline my-5 text-xs-center"><span style="font-family:'Jeju Hallasan' ; font-size:25pt">Project</span></h2>
         <RepositoryList></RepositoryList>
       </v-flex>
     </v-layout>
