@@ -10,8 +10,8 @@
       <v-flex class="aboutMe" :class="$mq" xs8>
         <h2 class="headline mb-3"><span style="font-family:'Jeju Hallasan' ; font-size:20pt">About Me</span></h2>
         <span style="font-family:'KHNPHU'">
-        <p class="mr-4" v-for ="item in data" v-if="item.where == item.info">{{ item.greeting }}<br></p>
-        <p class="mr-4" v-for ="item in data" v-if="item.where == item.info">안녕하세요 교육이수중입니다<br></p>
+        <!-- <p class="mr-4" v-for ="item in data" v-if="item.where == item.info">{{ item.greeting }}<br></p> -->
+        <p class="mr-4" v-for ="item in data" v-if="item.where == item.info" v-html="item.greeting"><br></p>
       </span>
       </v-flex>
 
@@ -61,7 +61,9 @@ import PostList from '../components/PostList'
 import RepositoryList from '../components/RepositoryList'
 
 var country = navigator.language.substr(0,2)
-console.log(country)
+
+var korea = "안녕하세요, 교육이수중입니다<br>코딩은 이곳에서 처음 배웠습니다<br>이 사이트는 한국어기반으로 로딩되었습니다"
+var english = "Hi ssafy. <br> This page is loaded on English"
 
 export default {
   name: 'HomePage',
@@ -82,12 +84,12 @@ export default {
     return{
       data: [{
         where: 'ko',
-        greeting:'안녕하세요, 저는 교육이수중입니다',
+        greeting: korea,
         info : country
       },
       {
         where: 'en',
-        greeting:'Hi, America!',
+        greeting: english,
         info : country}],
 
       info : country

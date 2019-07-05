@@ -10,21 +10,44 @@
 
 
   <v-footer>
-    <h6>(주)멀티캠퍼스 서울특별시 강남구 언주로 508 10-17층(역삼동, 서울상록빌딩) 고객센터 02-3429-5041 평일 상담시간 : 09:00 ~ 18:00</h6>
+    <h6> &nbsp; (주)멀티캠퍼스 서울특별시 강남구 언주로 508 10-17층(역삼동, 서울상록빌딩) 고객센터 02-3429-5041 평일 상담시간 : 09:00 ~ 18:00</h6><br>
   </v-footer>
 
+  <!-- <h1 class="h1-clock mt-2 mb-2" style="text-align:center; color:pink ">{{ data.test }}</h1>
+  <h1 class="h1-clock mt-2 mb-2" style="text-align:center; color:pink "></h1> -->
 
   <v-btn fab small @click="$vuetify.goTo(0, 'easeOutQuad')" style="position:fixed; bottom:10px; right:10px" id="MOVE_TOP_BTN">
     <v-icon>keyboard_arrow_up</v-icon>
   </v-btn>
+
+
 
 </v-app>
 </template>
 
 
 <script>
+
 import store from './store'
 import MainHeader from './views/MainHeader.vue'
+
+var clock = document.querySelector('.h1-clock');
+var clock2 = 'time'
+
+function getTime(){
+    const time = new Date();
+    const hour = time.getHours();
+    const minutes = time.getMinutes();
+    const seconds = time.getSeconds();
+    clock = `${hour<10 ? `0${hour}`:hour}:${minutes<10 ? `0${minutes}`:minutes}:${seconds<10 ? `0${seconds}`:seconds}`
+    clock2 = clock
+}
+
+function init(){
+    setInterval(getTime, 1000);
+}
+
+init();
 
 export default {
   name: 'App',
@@ -33,12 +56,13 @@ export default {
   },
   store,
   data() {
-    return {
-      //
-    }
+    return{
+      data: {
+        test: clock2,
+      },
   }
 }
-
+}
 
 var agent = navigator.userAgent.toLowerCase();
 var name = navigator.appName;
@@ -65,5 +89,6 @@ $(function() {
         }
     })
   });
+
 
 </script>
